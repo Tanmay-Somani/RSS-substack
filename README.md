@@ -20,4 +20,4 @@ python app.py
 ```
 
 
-The Website is accesible here: https://rss-substack-production.up.railway.app/
+The Website is accesible here: [RSS-Substack](https://rss-substack-production.up.railway.app/)
