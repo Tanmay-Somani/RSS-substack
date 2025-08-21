@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}How to Use - Substack Reader{% endblock %}
+
+{% block content %}
+    <h1>How It Works</h1>
+    <p>This application transforms a Substack RSS feed into a clean, readable HTML page and allows you to export the content in various formats.</p>
+
+    <h2>1. Find a Substack Feed</h2>
+    <p>You can enter the Substack's name or its full URL. The application will automatically find the correct RSS feed URL. Here are some valid inputs:</p>
+    <ul>
+        <li><code>writebuildscale</code></li>
+        <li><code>writebuildscale.substack.com</code></li>
+        <li><code>https://writebuildscale.substack.com</code></li>
+    </ul>
+
+    <h2>2. View the Content</h2>
+    <p>After submitting, the feed's content will be displayed in a clean, easy-to-read format. All posts from the feed are shown on a single page.</p>
+
+    <h2>3. Download in Your Preferred Format</h2>
+    <p>Using the "Download As..." dropdown menu, you can save the entire feed's content for offline use. The available formats are:</p>
+    <ul>
+        <li><strong>PDF:</strong> For universal viewing and printing.</li>
+        <li><strong>Word (.docx):</strong> For editing in Microsoft Word or Google Docs.</li>
+        <li><strong>PowerPoint (.pptx):</strong> A basic presentation with one post per slide.</li>
+        <li><strong>HTML:</strong> A self-contained web page for offline browser viewing.</li>
+        <li><strong>Plain Text (.txt):</strong> The raw text content with no formatting.</li>
+        <li><strong>Markdown (.md):</strong> For use in Markdown editors or note-taking apps.</li>
+    </ul>
+{% endblock %}

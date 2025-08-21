@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ feed_title }}{% endblock %}
+
+<!-- This new block injects the toolbar into the sticky header -->
+{% block toolbar %}
+    <div class="toolbar">
+        <a href="{{ url_for('index') }}" class="btn">&larr; Back</a>
+        
+        <select id="download-select" onchange="handleDownload(this)">
+            <option value="" disabled selected>Download As...</option>
+            <option value="{{ url_for('download_pdf', url=feed_url) }}">PDF Document</option>
+            <option value="{{ url_for('download_docx', url=feed_url) }}">Word Document (.docx)</option>
+            <option value="{{ url_for('download_pptx', url=feed_url) }}">PowerPoint (.pptx)</option>
+            <option value="" disabled>──────────</option>
+            <option value="{{ url_for('download_html', url=feed_url) }}">HTML Page (.html)</option>
+            <option value="{{ url_for('download_txt', url=feed_url) }}">Plain Text (.txt)</option>
+            <option value="{{ url_for('download_md', url=feed_url) }}">Markdown (.md)</option>
+        </select>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="feed-content" style="padding-top: 1rem;">
+        {{ feed_html|safe }}
+    </div>
+
+    <script>
+        function handleDownload(selectElement) {
+            const url = selectElement.value;
+            if (url) {
+                window.open(url, '_blank');
+                selectElement.selectedIndex = 0;
+            }
+        }
+    
+    const currentFeed = {
+        title: "{{ feed_title }}",
+        url: "{{ request.form.get('feed_input', '') }}"
+    };
+    
+    let history = JSON.parse(localStorage.getItem('feedHistory')) || [];
+    history = history.filter(item => item.url.toLowerCase() !== currentFeed.url.toLowerCase());
+    history.unshift(currentFeed);
+    
+    if (history.length > 5) {
+        history = history.slice(0, 5);
+    }
+    
+    localStorage.setItem('feedHistory', JSON.stringify(history));
+    </script>
+{% endblock %}
