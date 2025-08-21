@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RSS-substack
 Testing out deployment via different framework by converting python to javascript and vice versa in a substack RSS
 =======
@@ -19,4 +18,6 @@ pip install -r requirements.txt
 python app.py
 # Open http://localhost:5000
 ```
->>>>>>> 10553b0 (Pushing it)
+
+
+The Website is accesible here: https://rss-substack-production.up.railway.app/
