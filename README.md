@@ -1,3 +1,6 @@
+# RSS-substack
+Testing out deployment via different framework by converting python to javascript and vice versa in a substack RSS
+=======
 # Substack RSS → Pretty HTML (Plus)
 **Features**
 - Theme toggle (dark/light) with `localStorage` persistence
@@ -15,3 +18,6 @@ pip install -r requirements.txt
 python app.py
 # Open http://localhost:5000
 ```
+
+
+The Website is accesible here: [RSS-Substack](https://rss-substack-production.up.railway.app/)
